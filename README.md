@@ -3,6 +3,8 @@
 ```
 dotfile
 ├── config
+│   ├── colors
+│   │   └── dracula.vim
 │   └── nvim
 │       ├── configs
 │       │   ├── plugin-setting.vim
@@ -13,10 +15,12 @@ dotfile
 │   └── themes
 │       └── dracula.zsh-theme
 └── zshrc
+
 ```
 
 | Files | Descriptions |
 | --- | --- |
+| dracula.vim | custom vim theme name dracula |
 | plugin-setting.vim | contain the setting for the installed plugin |
 | plugin.vim | contain the list of plugin will be install into neovim |
 | settings.vim | contain all custom config for neovim |
@@ -25,5 +29,12 @@ dotfile
 | .zshrc | the config of zsh mamanged by oh-my-zsh |
 
 
+- Open document:
+```
+:help <vim option>
+
+Example:
+    :help :colorscheme
+```
 
 Theme repository: https://github.com/dracula/dracula-theme
