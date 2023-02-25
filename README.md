@@ -3,17 +3,17 @@
 ```
 dotfile
 ├── config
-│   ├── colors
-│   │   └── dracula.vim
-│   └── nvim
-│       ├── configs
-│       │   ├── plugin-setting.vim
-│       │   ├── plugin.vim
-│       │   └── settings.vim
-│       └── init.vim
+│   └── nvim
+│       ├── colors
+│       │   └── dracula.vim
+│       ├── configs
+│       │   ├── plugin-setting.vim
+│       │   ├── plugin.vim
+│       │   └── settings.vim
+│       └── init.vim
 ├── oh-my-zsh
-│   └── themes
-│       └── dracula.zsh-theme
+│   └── themes
+│       └── dracula.zsh-theme
 └── zshrc
 
 ```
