@@ -1,4 +1,4 @@
-# Repostructure
+# Repository Structure
 
 ```
 dotfile
@@ -23,3 +23,7 @@ dotfile
 | init.vim | find and run all config file in ./configs when neovim inited|
 | dracula.zsh-theme | custom theme name dracula |
 | .zshrc | the config of zsh mamanged by oh-my-zsh |
+
+
+
+Theme repository: https://github.com/dracula/dracula-theme
