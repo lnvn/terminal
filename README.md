@@ -16,6 +16,8 @@ dotfile
 │       └── dracula.zsh-theme
 └── zshrc
 
+vscode
+└── keybindings.json
 ```
 
 | Files | Descriptions |
