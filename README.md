@@ -1,4 +1,9 @@
-# Repository Structure
+## FrameWork / Tools List
+- [Oh-my-zsh](https://ohmyz.sh)
+- [Zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [Dracula Theme](https://github.com/dracula/dracula-theme/tree/master/themes)
+
+## Repository Structure
 
 ```
 dotfile
