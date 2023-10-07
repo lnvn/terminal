@@ -30,3 +30,13 @@ inoremap " ""<Left>
 
 " keymap to refresh NERDTree
 " nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
+
+" Use tab with text block
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set smarttab
