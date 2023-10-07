@@ -45,3 +45,11 @@ Example:
 ```
 
 Theme repository: https://github.com/dracula/dracula-theme
+
+
+### Note
+for MacOS
+use this command to disable ApplePressAndHoldEnabled function (tested on MacOS Ventura)
+```
+$ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+```
