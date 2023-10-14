@@ -20,7 +20,6 @@ function help {
 
 
 function backup_config {
-    set -e
     echo "=== Backup config ==="
 
     echo "1. Create backup directory"
@@ -57,7 +56,6 @@ function backup_config {
 
 
 function link_config {
-    set -e
     echo "=== Linking dotfile ==="
 
     #
