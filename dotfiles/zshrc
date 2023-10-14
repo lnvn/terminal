@@ -100,10 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#######################################
-# Custom Alias
-alias vim='nvim'
-alias vf='nvim $(fzf)'
+# Custom alias
 
-# Show time & user in the begining of terminal
+# Show time and user name
 export PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[pink]%}%D{%T}%{$reset_color%} [$(whoami)] %{$fg_bold[blue]%}%c $(git_prompt_info)% %{$reset_color%}'

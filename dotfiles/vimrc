@@ -1,5 +1,5 @@
 " set backgroud
- colorscheme dracula
+colorscheme dracula
 
 " enable syntax hightlight
 syntax on
@@ -22,6 +22,7 @@ inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap " ""<Left>
+inoremap < <><Left>
 
 " map key
 " <CR> is like Enter in keyboard
