@@ -97,5 +97,6 @@ else
         ;;
         *)
         echo "Specify wrong argument, use --help for more detail"
+        ;;
     esac
 fi
