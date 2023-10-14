@@ -81,15 +81,21 @@ function link_config {
     echo -e "\n"
 }
 
-# execute script
-case "$1" in
-    --help)
-    help
-    ;;
-    --backup)
-    backup_config
-    ;;
-    --link-config)
-    link_config
-    ;;
-esac
+# execute 
+if [ $# -eq 0 ]; then
+    echo "Please specify argument, use --help for more detail"
+else
+    case "$1" in
+        --help)
+        help
+        ;;
+        --backup)
+        backup_config
+        ;;
+        --link-config)
+        link_config
+        ;;
+        *)
+        echo "Specify wrong argument, use --help for more detail"
+    esac
+fi
