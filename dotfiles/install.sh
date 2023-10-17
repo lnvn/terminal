@@ -72,6 +72,10 @@ function link_config {
         ((i++)) # use (( )) to perform arithmetic operations
     done
 
+    # Copy vimrc content to config/nvim/settings.vim
+    echo "copy .vimrc -> .config/nvim/settings.vim"
+    cat $(pwd)/vimrc > ~/.config/nvim/configs/settings.vim
+
     echo -e "\n"
 }
 

@@ -9,8 +9,16 @@ set relativenumber
 set number
 set numberwidth=4
 
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set smarttab
+
 set ruler " show cursor position all the time
 set showmatch " show matching brackets
+
+set mouse=a " allow use mouse in vim
 
 " change line number of relativenumber
 hi LineNrAbove guifg=grey ctermfg=grey
@@ -35,9 +43,3 @@ inoremap < <><Left>
 " Use tab with text block
 vmap <Tab> >gv
 vmap <S-Tab> <gv
-
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set smarttab
