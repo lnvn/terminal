@@ -93,6 +93,10 @@ else
         --link-config)
         link_config
         ;;
+        --backup-and-link)
+        backup_config
+        link_config
+        ;;
         *)
         echo "Specify wrong argument, use --help for more detail"
         ;;

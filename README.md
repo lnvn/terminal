@@ -1,8 +1,3 @@
-## FrameWork / Tools List
-- [Oh-my-zsh](https://ohmyz.sh)
-- [Zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [Dracula Theme](https://github.com/dracula/dracula-theme/tree/master/themes)
-
 ## Repository Structure
 
 ```
@@ -12,6 +7,7 @@ dotfile
 │       ├── colors
 │       │   └── dracula.vim
 │       ├── configs
+|       |   ├── plug.vim
 │       │   ├── plugin-setting.vim
 │       │   ├── plugin.vim
 │       │   └── settings.vim
@@ -19,6 +15,7 @@ dotfile
 ├── oh-my-zsh
 │   └── themes
 │       └── dracula.zsh-theme
+├── vimrc
 └── zshrc
 
 vscode
@@ -33,19 +30,8 @@ vscode
 | settings.vim | contain all custom config for neovim |
 | init.vim | find and run all config file in ./configs when neovim inited|
 | dracula.zsh-theme | custom theme name dracula |
+| .vimrc | setting for vim and nvim, this will be copied to settings.vim in install.sh script |
 | .zshrc | the config of zsh mamanged by oh-my-zsh |
-
-
-- Open document:
-```
-:help <vim option>
-
-Example:
-    :help :colorscheme
-```
-
-Theme repository: https://github.com/dracula/dracula-theme
-
 
 ### Note
 for MacOS
