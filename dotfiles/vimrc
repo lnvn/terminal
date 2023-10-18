@@ -30,6 +30,7 @@ inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap " ""<Left>
+inoremap ' ''<Left>
 inoremap < <><Left>
 
 " map key
