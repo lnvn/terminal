@@ -1,11 +1,8 @@
 call plug#begin('~/.config/nvim/bundle')
 
-" fuzzy find pluin
+" fuzzy find plugin
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-" Python auto-complete plugin
-" Plug 'davidhalter/jedi-vim'
 
 " vim airline - Status Bar
 Plug 'vim-airline/vim-airline'

@@ -39,3 +39,8 @@ use this command to disable ApplePressAndHoldEnabled function (tested on MacOS V
 ```
 $ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
+
+Reset Iterm2 configuration
+```
+$ defaults delete com.googlecode.iterm2
+```

@@ -20,6 +20,12 @@ function help {
         # IMPORTANT: You need to run --backup fisrt or cleanup all config file before you run --link-config #
         #####################################################################################################
         Soft link $list_item into \$HOME directory
+    
+    --backup-and-link
+        Include backup and then link config file in one argument option
+
+    --link-vimrc
+        Only link .vimrc (vim) with settings.vim (neovim) for persional testing
     "
 }
 
@@ -72,6 +78,10 @@ function link_config {
         ((i++)) # use (( )) to perform arithmetic operations
     done
 
+    echo -e "\n"
+}
+
+function sub_link_config {
     # Copy vimrc content to config/nvim/settings.vim
     echo "copy .vimrc -> .config/nvim/settings.vim"
     cat $(pwd)/vimrc > ~/.config/nvim/configs/settings.vim
@@ -92,10 +102,15 @@ else
         ;;
         --link-config)
         link_config
+        sub_link_config
         ;;
         --backup-and-link)
         backup_config
         link_config
+        sub_link_config
+        ;;
+        --link-vimrc)
+        sub_link_config
         ;;
         *)
         echo "Specify wrong argument, use --help for more detail"

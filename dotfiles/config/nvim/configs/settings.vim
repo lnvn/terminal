@@ -15,6 +15,9 @@ set softtabstop=2
 set expandtab
 set smarttab
 
+" Copy to clipboard
+set clipboard=unnamed
+
 set ruler " show cursor position all the time
 set showmatch " show matching brackets
 
@@ -33,27 +36,25 @@ inoremap " ""<Left>
 inoremap ' ''<Left>
 inoremap < <><Left>
 
-" map key
-" <CR> is like Enter in keyboard
-" map <C-p> :!python3 %<CR>
-" map <Leader>run :!python3 %<CR>
-
-" keymap to refresh NERDTree
-" nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
-
 " Use tab with text block
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
+" nerdTree shotcut config
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" fzf
+noremap ` :Files<CR>
+noremap ; :Buffers<CR>
 
 " custom the expand/colapse icon
 " let g:NERDTreeDirArrowExpandable="+"
 " let g:NERDTreeDirArrowCollapsible="~"
 
 " Auto complete trigger by tab
+" See https://github.com/neoclide/coc.nvim
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -68,3 +69,23 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
