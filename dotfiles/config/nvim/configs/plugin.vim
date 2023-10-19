@@ -1,4 +1,5 @@
-call plug#begin('~/.config/nvim/bundle')
+" Safe bundle to other directory instead of vim
+call plug#begin('~/.config/nvim-bundle')
 
 " fuzzy find plugin
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -25,7 +26,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " NerdTree
 Plug 'scrooloose/nerdtree'
 
-# Navigate from vim to tmux
+" Navigate from vim to tmux
 Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
