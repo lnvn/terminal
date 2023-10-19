@@ -25,4 +25,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " NerdTree
 Plug 'scrooloose/nerdtree'
 
+# Navigate from vim to tmux
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
