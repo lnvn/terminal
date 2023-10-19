@@ -44,3 +44,10 @@ Reset Iterm2 configuration
 ```
 $ defaults delete com.googlecode.iterm2
 ```
+
+Install tmux plugin manager
+```
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+
