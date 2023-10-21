@@ -22,7 +22,7 @@ Inside tmux
 ```
 Prefix + I
 ```
-(default Prefix: Ctrl + B)
+(default Prefix: Ctrl + b)
 
 
 
