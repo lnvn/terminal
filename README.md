@@ -1,3 +1,31 @@
+## Setup
+### Prerequisites
+Install neovim, oh-my-zsh, tmux
+#### NOTE: Install script currently does not support install those component, it will be updated in the future! (Don't know when :wink: )
+
+### Run script
+```
+$ cd dotfiles
+$ ./install --backup-and-link
+```
+### Install vim plugin
+Inside neovim run
+```
+: PlugInstall
+```
+
+### Install tmux plugin
+```
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+Inside tmux
+```
+Prefix + I
+```
+(default Prefix: Ctrl + B)
+
+
+
 ## Repository Structure
 
 ```
@@ -44,10 +72,3 @@ Reset Iterm2 configuration
 ```
 $ defaults delete com.googlecode.iterm2
 ```
-
-Install tmux plugin manager
-```
-$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-
