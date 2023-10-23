@@ -29,4 +29,12 @@ Plug 'scrooloose/nerdtree'
 " Navigate from vim to tmux
 Plug 'christoomey/vim-tmux-navigator'
 
+" Vim Plugin
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
+Plug 'sindrets/diffview.nvim'
+
+" Surrounding Text
+Plug 'tpope/vim-surround'
+
 call plug#end()
