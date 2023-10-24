@@ -16,6 +16,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Then Terminal -> Setting -> Profiles -> Text -> Font -> Hack Nerd Font
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'nvim-tree/nvim-web-devicons'
+
 " Auto completition
 " require nodejs & jedi
 " $ brew install node
@@ -36,5 +38,6 @@ Plug 'sindrets/diffview.nvim'
 
 " Surrounding Text
 Plug 'tpope/vim-surround'
+
 
 call plug#end()
