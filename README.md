@@ -72,3 +72,8 @@ Reset Iterm2 configuration
 ```
 $ defaults delete com.googlecode.iterm2
 ```
+
+Install zsh-autosuggestion
+```
+$ git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+```
