@@ -14,6 +14,12 @@ Inside neovim run
 : PlugInstall
 ```
 
+### Install coc
+```
+:CocInstall coc-pyright
+:CocInstall coc-yaml
+```
+
 ### Install tmux plugin
 ```
 $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -39,5 +39,13 @@ Plug 'sindrets/diffview.nvim'
 " Surrounding Text
 Plug 'tpope/vim-surround'
 
+" comment line
+Plug 'preservim/nerdcommenter'
+
+" Testing
+Plug 'williamboman/mason.nvim'
 
 call plug#end()
+
+" call setup command
+lua require("mason").setup()
