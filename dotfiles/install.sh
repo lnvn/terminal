@@ -117,3 +117,6 @@ else
         ;;
     esac
 fi
+
+# update install fzf in future
+# $brew install fzf (which can help us to fuzzy search history use Ctrl + r)
