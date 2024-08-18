@@ -26,6 +26,9 @@ function help {
 
     --link-vimrc
         Only link .vimrc (vim) with settings.vim (neovim) for persional testing
+    
+    --check_package
+        Check if all needed package are installed or not
     "
 }
 
@@ -65,7 +68,6 @@ function backup_config {
     echo -e "\n"
 }
 
-
 function link_config {
     echo "=== Linking dotfile ==="
 
@@ -87,6 +89,62 @@ function sub_link_config {
     cat $(pwd)/vimrc > ~/.config/nvim/configs/settings.vim
 
     echo -e "\n"
+}
+
+# Check and install ZSH
+function verify_zsh {
+    if command -v zsh &> /dev/null; then
+        echo "ZSH is installed"
+        return 0
+    else
+        echo "ZSH not found, do you wanna install it, type \"yes\" to approve:" && read -r response
+        if [ $response == "yes" ]; then
+            sudo apt install zsh -y
+            echo "---> Installed ZSH"
+            return 0
+        else
+            echo "Skipped install ZSH"
+            return 1
+        fi
+    fi
+}
+
+# Check and install Oh-my-zsh
+function verify_omz {
+    if [[ -d `$HOME/.oh-my-zsh` ]] &> /dev/null ; then
+        echo "Oh-my-zsh not found, do you wanna install it, type \"yes\" to approve:" && read -r response
+        if [ $response == "yes" ]; then
+            sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+            echo "---> Installed Oh-my-zsh"
+            return 0
+        else
+            echo "Skipped install Oh-my-zsh"
+            return 1
+        fi
+    else
+        echo "Oh-my-zsh is installed"
+        return 0
+    fi
+}
+
+# Check and install ZSH Autosuggestions
+# function verify_autosuggest {
+#     echo `$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions`
+#     if [[ -d `$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions` ]] &> /dev/null; then
+#         echo "ZSH Autosuggestions not found, do you wanna install it, type \"yes\" to approve:" && read -r response
+#         if [ $response == "yes" ]; then
+#             echo "---> Installed ZSH Autosuggestions"
+#         else
+#             echo "Skipped install ZSH Autosuggestions"
+#         fi
+#     else
+#         echo "ZSH Autosuggestions is installed"
+#     fi
+# }
+
+function check_package {
+    # check if ZSH and Oh-my-zsh are installed
+    verify_zsh && verify_omz
 }
 
 # execute 
@@ -111,6 +169,9 @@ else
         ;;
         --link-vimrc)
         sub_link_config
+        ;;
+        --check-package)
+        check_package
         ;;
         *)
         echo "Specify wrong argument, use --help for more detail"
