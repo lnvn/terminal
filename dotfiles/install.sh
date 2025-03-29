@@ -109,6 +109,23 @@ function verify_zsh {
     fi
 }
 
+function verify_tmux {
+    if command -v tmux &> /dev/null; then
+        echo "Tmux is installed"
+        return 0
+    else
+        echo "Tmux not found, do you wanna install it, type \"yes\" to approve:" && read -r response
+        if [ $response == "yes" ]; then
+            sudo apt install tmux -y
+            echo "---> Installed Tmux"
+            return 0
+        else
+            echo "Skipped install Tmux"
+            return 1
+        fi
+    fi
+}
+
 # Check and install Oh-my-zsh
 function verify_omz {
     if [[ -d `$HOME/.oh-my-zsh` ]] &> /dev/null ; then
@@ -144,7 +161,7 @@ function verify_omz {
 
 function check_package {
     # check if ZSH and Oh-my-zsh are installed
-    verify_zsh && verify_omz
+    verify_zsh && verify_omz && verify_tmux
 }
 
 # execute 
