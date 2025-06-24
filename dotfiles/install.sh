@@ -17,7 +17,7 @@ function help {
 
     --link-config
         #####################################################################################################
-        # IMPORTANT: You need to run --backup fisrt or cleanup all config file before you run --link-config #
+        # IMPORTANT: You may want to run --backup fisrt or cleanup all config file before you run --link-config #
         #####################################################################################################
         Soft link $list_item into \$HOME directory
     
@@ -128,7 +128,8 @@ function verify_tmux {
 
 # Check and install Oh-my-zsh
 function verify_omz {
-    if [[ -d `$HOME/.oh-my-zsh` ]] &> /dev/null ; then
+    local plugin_path="$HOME/.oh-my-zsh"
+    if [[ ! -d "$plugin_path" ]] ; then
         echo "Oh-my-zsh not found, do you wanna install it, type \"yes\" to approve:" && read -r response
         if [ $response == "yes" ]; then
             sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -145,23 +146,27 @@ function verify_omz {
 }
 
 # Check and install ZSH Autosuggestions
-# function verify_autosuggest {
-#     echo `$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions`
-#     if [[ -d `$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions` ]] &> /dev/null; then
-#         echo "ZSH Autosuggestions not found, do you wanna install it, type \"yes\" to approve:" && read -r response
-#         if [ $response == "yes" ]; then
-#             echo "---> Installed ZSH Autosuggestions"
-#         else
-#             echo "Skipped install ZSH Autosuggestions"
-#         fi
-#     else
-#         echo "ZSH Autosuggestions is installed"
-#     fi
-# }
+function verify_autosuggest {
+    local plugin_path="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    if [[ ! -d "$plugin_path" ]] ; then
+        echo "ZSH Auto suggestions not found, do you wanna install it, type \"yes\" to approve:" && read -r response
+        if [ $response == "yes" ]; then
+            git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+            echo "---> Installed ZSH Auto suggestions, reopen your termial to make it applied"
+            return 0
+        else
+            echo "Skipped install ZSH Auto suggestions"
+            return 1
+        fi
+    else
+        echo "ZSH Auto suggestions is installed"
+        return 0
+    fi
+}
 
 function check_package {
     # check if ZSH and Oh-my-zsh are installed
-    verify_zsh && verify_omz && verify_tmux
+    verify_zsh && verify_omz && verify_tmux && verify_autosuggest
 }
 
 # execute 
