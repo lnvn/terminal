@@ -27,7 +27,7 @@ function help {
     --link-vimrc
         Only link .vimrc (vim) with settings.vim (neovim) for persional testing
     
-    --check_package
+    --check-package
         Check if all needed package are installed or not
     "
 }
