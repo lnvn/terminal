@@ -107,3 +107,4 @@ alias k="kubectl"
 
 # Show time and user name
 export PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[pink]%}%D{%T}%{$reset_color%} [$(whoami)] %{$fg_bold[blue]%}%c $(git_prompt_info)% %{$reset_color%}'
+export PATH="$HOME/.local/bin:$PATH"

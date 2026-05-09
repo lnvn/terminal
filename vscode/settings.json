@@ -1,0 +1,22 @@
+{
+    "claudeCode.preferredLocation": "panel",
+    "editor.suggest.showStatusBar": true,
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.mouseWheelScrollSensitivity": 3,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.suggest.selectionMode": "never",
+    "chat.disableAIFeatures": true,
+    "workbench.settings.applyToAllProfiles": [
+    ],
+    "claudeCode.environmentVariables": [
+        
+
+
+
+    ],
+    "vim.vimrc.path": "$HOME/.vimrc"
+}
