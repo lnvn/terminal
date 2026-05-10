@@ -91,6 +91,24 @@ function sub_link_config {
     echo -e "\n"
 }
 
+# Check and install Homebrew
+function verify_homebrew {
+    if command -v brew &> /dev/null; then
+        echo "Homebrew is installed"
+        return 0
+    else
+        echo "Homebrew not found, do you wanna install it, type \"yes\" to approve:" && read -r response
+        if [ $response == "yes" ]; then
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            echo "---> Installed Homebrew"
+            return 0
+        else
+            echo "Skipped install Homebrew"
+            return 1
+        fi
+    fi
+}
+
 # Check and install ZSH
 function verify_zsh {
     if command -v zsh &> /dev/null; then
@@ -99,7 +117,7 @@ function verify_zsh {
     else
         echo "ZSH not found, do you wanna install it, type \"yes\" to approve:" && read -r response
         if [ $response == "yes" ]; then
-            sudo apt install zsh -y
+            brew install zsh
             echo "---> Installed ZSH"
             return 0
         else
@@ -116,7 +134,7 @@ function verify_tmux {
     else
         echo "Tmux not found, do you wanna install it, type \"yes\" to approve:" && read -r response
         if [ $response == "yes" ]; then
-            sudo apt install tmux -y
+            brew install tmux
             echo "---> Installed Tmux"
             return 0
         else
@@ -165,8 +183,8 @@ function verify_autosuggest {
 }
 
 function check_package {
-    # check if ZSH and Oh-my-zsh are installed
-    verify_zsh && verify_omz && verify_tmux && verify_autosuggest
+    # check if Homebrew, ZSH, Oh-my-zsh, Tmux, and plugins are installed
+    verify_homebrew && verify_zsh && verify_omz && verify_tmux && verify_autosuggest
 }
 
 # execute 
@@ -203,4 +221,4 @@ fi
 
 
 # update install fzf in future
-# $brew install fzf (which can help us to fuzzy search history use Ctrl + r)
+# $ brew install fzf (which can help us to fuzzy search history use Ctrl + r)
